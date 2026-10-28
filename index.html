@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="안성윤 포트폴리오. GitJob, RunWay, R0-KI, 할래말래 네 개의 팀 프로젝트에서 맡은 일과 문제를 푼 과정, 결과를 정리했습니다.">
+  <title>안성윤 · 포트폴리오</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" crossorigin>
+  <link href="styles.css?v=14" rel="stylesheet">
+  <script src="site.js?v=11" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+  <header class="site-head">
+    <div class="wrap head-in">
+      <a class="brand" href="#top">안성윤<span>Portfolio</span></a>
+      <nav class="site-nav" aria-label="주요 메뉴"><a href="#cases">프로젝트</a><a href="#activities">활동</a><a href="#about">이력</a><a class="nav-cta" href="#contact">연락</a></nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="hero-band">
+      <section class="wrap hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">DATA · AI · SYSTEM</p>
+          <h1 id="hero-title">안녕하세요,<br><span>저는 안성윤입니다.</span></h1>
+          <p class="hero-name">Full-stack → System Integration → Data Engineering → AI</p>
+          <p class="hero-intro">냉동공조공학을 전공하고 에스가드에서 1년 2개월 동안 안전관리자로 일했습니다. 같은 기준이라도 작업과 사람, 현장 상황에 따라 확인할 위험이 달라서, 서류로 판단하기 어려운 건 현장에 가서 작업자와 직접 확인했습니다. 지금은 SSAFY 15기에서 개발을 배우고 있고, 데이터를 볼 때도 그 숫자가 어디서 어떻게 나왔는지부터 확인합니다.</p>
+          <div class="hero-links">
+            <a class="button button-mint" href="#cases">프로젝트 보기 <span aria-hidden="true">↓</span></a>
+            <a class="button" href="mailto:anjong777@naver.com">이메일 보내기 <span aria-hidden="true">↗</span></a>
+            <button class="text-button" type="button" data-print>인쇄·PDF 저장</button>
+          </div>
+        </div>
+        <div class="hero-side">
+          <img class="portrait" src="assets/profile.jpg" alt="안성윤 프로필 사진" width="800" height="1067">
+          <p>SSAFY 15기 Python 트랙<br>github.com/seongyun-dev</p>
+        </div>
+        <dl class="profile-facts">
+          <div><dt>경력</dt><dd>에스가드 안전관리<br>2024.09 – 2025.11</dd></div>
+          <div><dt>교육</dt><dd>SSAFY 15기 Python 트랙<br>동명대학교 냉동공조공학과</dd></div>
+          <div><dt>리더십</dt><dd>프로젝트 팀장 3회<br>총동아리연합회 회장</dd></div>
+          <div><dt>수상</dt><dd><a href="#awards">SSAFY 팀 프로젝트 3회<br>최우수상 1, 우수상 2</a></dd></div>
+        </dl>
+      </section>
+    </div>
+
+    <section class="cases-section" id="cases" aria-labelledby="cases-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="section-label">01 / PROJECT CASES</p><h2 id="cases-title">팀 프로젝트</h2></div>
+        </div>
+        <nav class="shortcuts" id="shortcuts" aria-label="프로젝트 바로가기">
+          <a href="#case-gitjob"><span class="shortcut-no">01</span><strong>GitJob</strong><small>GitHub 기반 기술 분석·채용 매칭 서비스</small><span class="arrow" aria-hidden="true">↓</span></a>
+          <a href="#case-runway"><span class="shortcut-no">02</span><strong>RunWay</strong><small>AI 러닝 페이스메이커</small><span class="arrow" aria-hidden="true">↓</span></a>
+          <a href="#case-r0ki"><span class="shortcut-no">03</span><strong>R0-KI</strong><small>자율주행 아파트 순찰 로봇</small><span class="arrow" aria-hidden="true">↓</span></a>
+          <a href="#case-hallae"><span class="shortcut-no">04</span><strong>할래말래</strong><small>보드게임 추천 웹 서비스</small><span class="arrow" aria-hidden="true">↓</span></a>
+        </nav>
+
+        <div class="case-group"><p class="case-group-label">PART 1 · 데이터와 AI</p><p>데이터를 모아 처리하고, 예측 모델을 고른 프로젝트</p></div>
+
+        <article class="case" id="case-gitjob" aria-labelledby="gitjob-title">
+          <div class="case-head">
+            <div><p class="case-kind">01 / DATA ENGINEERING</p><h3 id="gitjob-title">GitJob<small>GITHUB × JOB MATCHING</small></h3></div>
+            <div class="case-meta"><p>2026.08.18 — 10.02 · 팀장</p><span class="badge">팀 프로젝트 우수상</span></div>
+          </div>
+          <div class="case-cols">
+            <div>
+              <p class="case-intro">사용자의 GitHub 저장소를 분석해 실제로 쓴 기술을 찾고, 채용공고의 기술 수요와 비교해 부족한 기술과 지원할 수 있는 공고를 보여주는 서비스입니다. 저는 팀장이자 Data Engineering 파트를 맡아, GitHub 활동 데이터와 채용공고 데이터를 모으고 처리하는 파이프라인을 만들었습니다.</p>
+              <dl class="case-facts">
+                <div><dt>담당</dt><dd>Kafka·Spark·HDFS 파이프라인, Redis 최적화, 모니터링</dd></div>
+                <div><dt>사용 기술</dt><dd>Kafka, Spark, HDFS, Redis, Prometheus, Grafana</dd></div>
+                <div><dt>저장소</dt><dd><a href="https://github.com/seongyun-dev/GitJob" target="_blank" rel="noopener noreferrer">github.com/seongyun-dev/GitJob ↗</a></dd></div>
+              </dl>
+              <ul class="steps">
+                <li><strong>원본과 처리 결과를 나눠 저장했습니다</strong><p>대용량 원본은 HDFS에 그대로 두고, Spark로 처리한 결과는 Parquet 파일로 관리했습니다.</p></li>
+                <li><strong>작업마다 Kafka consumer를 따로 뒀습니다</strong><p>적재, 추출, 집계를 서로 다른 consumer가 맡게 해서 작업을 따로 돌리고, 필요하면 데이터를 다시 처리할 수 있게 했습니다.</p></li>
+                <li><strong>같은 코드는 두 번 분석하지 않게 했습니다</strong><p>repo_id + commit SHA를 키로 Redis에 분석 결과를 기록해 두고, 코드가 같을 때만 저장한 결과(Artifact)를 다시 썼습니다.</p></li>
+                <li><strong>파이프라인 상태를 Prometheus와 Grafana로 봤습니다</strong><p>서버 자원과 Kafka, HDFS 상태를 모니터링해서 파이프라인 어디가 이상한지 볼 수 있게 했습니다.</p></li>
+              </ul>
+            </div>
+            <div class="results">
+              <h4>결과</h4>
+              <dl>
+                <div><dt>GitHub API 호출</dt><dd><strong>−17.17%</strong><small>같은 저장소 묶음을 Redis에 재사용할 결과가 없을 때와 있을 때 각각 분석해 비교 (2,971회 → 2,461회)</small></dd></div>
+                <div><dt>전체 처리 시간</dt><dd><strong>−16.71%</strong><small>같은 비교에서 1,125초 → 937초</small></dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="slider" data-slider>
+            <div class="slider-track" tabindex="0" aria-label="GitJob 실제 서비스 화면">
+              <figure class="slide"><img src="assets/gitjob-home.png" alt="GitJob 시작 화면" width="2880" height="1530" loading="lazy"><figcaption>시작 화면</figcaption></figure>
+              <figure class="slide"><img src="assets/gitjob-skills.png" alt="분석한 저장소에서 확인한 기술과 수준을 보여주는 내 기술 대시보드" width="2880" height="1530" loading="lazy"><figcaption>내 기술: 저장소에서 확인한 기술과 수준</figcaption></figure>
+              <figure class="slide"><img src="assets/gitjob-evidence.png" alt="React를 사용한 근거를 저장소 코드 위치로 보여주는 화면" width="2880" height="1530" loading="lazy"><figcaption>기술별 사용 근거</figcaption></figure>
+              <figure class="slide"><img src="assets/gitjob-demand.png" alt="목표 직무를 고르면 채용공고의 기술 수요를 보여주는 화면" width="2880" height="1530" loading="lazy"><figcaption>목표 직무의 채용 기술 수요</figcaption></figure>
+              <figure class="slide"><img src="assets/gitjob-matching.png" alt="내 기술과 맞는 채용공고 목록 화면" width="2880" height="1530" loading="lazy"><figcaption>내 기술과 맞는 공고</figcaption></figure>
+              <figure class="slide"><img src="assets/gitjob-requirements.png" alt="공고의 필수 기술과 내 기술을 비교하는 요구사항 상세 화면" width="2880" height="1530" loading="lazy"><figcaption>공고 요구사항 상세</figcaption></figure>
+              <figure class="slide"><img src="assets/gitjob-next-skills.png" alt="채용공고 요구 기술을 기준으로 다음에 배울 기술을 추천하는 화면" width="2880" height="1530" loading="lazy"><figcaption>다음에 배울 기술</figcaption></figure>
+              <figure class="slide"><img src="assets/gitjob-trends.png" alt="GitHub 활동 저장소 수와 공고 요구 건수로 본 기술 트렌드 화면" width="2880" height="1530" loading="lazy"><figcaption>기술 트렌드</figcaption></figure>
+            </div>
+            <div class="slider-bar"><div class="slider-nav"><button type="button" data-dir="-1" aria-label="이전 화면">←</button><span class="slider-count">1 / 8</span><button type="button" data-dir="1" aria-label="다음 화면">→</button></div></div>
+          </div>
+          <section class="story" aria-label="GitJob 핵심 기여">
+            <p class="story-label">핵심 기여</p>
+            <h4>Repository만 볼까, commit SHA까지 볼까</h4>
+            <ol>
+              <li><span>현상</span><p>같은 저장소를 분석할 때마다 근거를 처음부터 다시 확인하느라, GitHub API 호출이 많고 시간도 오래 걸렸습니다.</p></li>
+              <li><span>원인</span><p>저장소 단위로만 재사용하는 방법(Repository-only)은 호출을 더 줄일 것처럼 보였지만, 같은 저장소라도 commit이 바뀌면 코드가 달라집니다. 예전 버전의 분석 결과가 그대로 나갈 위험이 있었습니다.</p></li>
+              <li><span>해결</span><p>Redis 키를 repo_id + commit SHA로 잡아, 코드 버전이 같을 때만 저장해 둔 Artifact를 다시 썼습니다. 결과 파일과 조회용 인덱스는 따로 관리했습니다.</p></li>
+              <li><span>결과</span><p>같은 저장소 묶음을 재사용 전후로 돌려 보니 GitHub API 호출이 2,971회에서 2,461회로 17.17%, 처리 시간이 1,125초에서 937초로 16.71% 줄었습니다.</p></li>
+            </ol>
+          </section>
+        </article>
+
+        <article class="case" id="case-runway" aria-labelledby="runway-title">
+          <div class="case-head">
+            <div><p class="case-kind">02 / AI</p><h3 id="runway-title">RunWay<small>AI RUNNING PACEMAKER</small></h3></div>
+            <div class="case-meta"><p>2026.10.06 — 11.18 · 팀원</p><span class="badge">진행 중</span></div>
+          </div>
+          <div class="case-cols">
+            <div>
+              <p class="case-intro">목표 거리와 완주 시간, 현재 심박수와 페이스, 코스 경사를 바탕으로 미래 심박수를 예측해 적정 페이스와 러닝 코스를 제안하는 러닝 페이스메이커입니다. 저는 AI 파트를 맡아 러닝 데이터를 전처리하고 미래 심박 예측 모델을 만들고 있고, OSM 도로 데이터와 직접 모은 러닝 GPX로 코스를 만들어 평가하는 로직을 설계하고 검증하고 있습니다. 지금은 실제 서비스에 쓰기 위해 개인화와 실시간 예측 구조를 다듬고 있습니다.</p>
+              <dl class="case-facts">
+                <div><dt>담당</dt><dd>러닝 데이터 수집·전처리, 미래 심박 예측 모델, 코스 생성·추천 로직</dd></div>
+                <div><dt>사용 기술</dt><dd>Python, NetworkX, GRU, Transformer</dd></div>
+                <div><dt>데이터</dt><dd>부산 OSM 도로 73,064 ways · 524,108 nodes, 국내 러닝 GPX 299개 (RunnerOn 34, 와리가리 265)</dd></div>
+              </dl>
+              <ul class="steps">
+                <li><strong>러닝 데이터를 모으고 전처리했습니다</strong><p>코스 평가에 쓸 국내 러닝 GPX 299개를 모으고, 부산 OSM 도로 데이터를 코스 생성용 그래프로 만들었습니다. 심박 예측에 쓸 러닝 데이터도 전처리했습니다.</p></li>
+                <li><strong>심박이 늦게 반응하는 점을 고려해 모델을 비교했습니다</strong><p>심박수는 속도가 바뀐 뒤 조금 늦게 따라옵니다. 이 특성을 반영해 ODE 모델에서 시작해 GRU, Transformer 같은 시계열 모델까지 비교했습니다.</p></li>
+                <li><strong>정확도만 보고 모델을 고르지 않았습니다</strong><p>오차(MAE)가 가장 작은 모델(3.143 bpm)도 속도를 올렸을 때 심박이 내려간다고 예측하는 경우가 12% 있었습니다. 페이스를 제안하는 데 쓰는 예측이라 정확도와 함께 예측 방향도 보고, MAE 3.159 bpm에 거꾸로 된 예측 0.6%인 모델을 골랐습니다.</p></li>
+                <li><strong>팀원 모델을 같은 기준으로 비교하게 했습니다</strong><p>팀원들이 각자 만든 LightGBM, GRU, Transformer를 같은 데이터와 같은 평가 코드로 평가하도록 기준을 정했습니다. 30초, 60초, 2분 뒤 MAE의 평균을 기본 지표로 씁니다.</p></li>
+                <li><strong>코스 생성이 왜 느린지부터 확인했습니다</strong><p>단계별로 확인해 보니 그래프 객체를 만드는 데 시간이 가장 많이 들었습니다. 지도를 격자로 나눠 필요한 범위만 골라 그래프를 만드는 방식으로 바꿨습니다.</p></li>
+              </ul>
+            </div>
+            <div class="results">
+              <h4>결과</h4>
+              <dl>
+                <div><dt>5km 코스 그래프 만드는 시간</dt><dd><strong>70.9%↓</strong><small>2.13초 → 0.62초</small></dd></div>
+                <div><dt>모델 선택</dt><dd><strong>성능보다 서비스에 맞는 모델</strong><small>MAE는 3.143&nbsp;→&nbsp;3.159&nbsp;bpm으로 조금 높지만, 빨리 달리면 심박이 내려간다는 예측을 12.0%&nbsp;→&nbsp;0.6%로 줄였습니다.</small></dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="slider phones" data-slider>
+            <div class="slider-track" tabindex="0" aria-label="RunWay 화면 설계">
+              <figure class="slide"><img src="assets/runway-course-list.jpg" alt="RunWay 화면 설계: 지도 카드로 보여 주는 추천 코스 목록" width="1080" height="2280" loading="lazy"><figcaption>추천 코스 목록</figcaption></figure>
+              <figure class="slide"><img src="assets/runway-course-detail.jpg" alt="RunWay 화면 설계: 거리, 예상 시간, 고도와 비교 기록을 보여 주는 코스 상세" width="1080" height="2280" loading="lazy"><figcaption>코스 상세</figcaption></figure>
+              <figure class="slide"><img src="assets/runway-running.jpg" alt="RunWay 화면 설계: 내 페이스와 목표 페이스 범위를 보여 주는 러닝 진행 화면" width="1080" height="2280" loading="lazy"><figcaption>달리는 중</figcaption></figure>
+              <figure class="slide"><img src="assets/runway-record.jpg" alt="RunWay 화면 설계: 구간별 페이스 그래프를 보여 주는 기록 상세" width="1080" height="2280" loading="lazy"><figcaption>기록 상세</figcaption></figure>
+            </div>
+            <div class="slider-bar"><p class="slider-note">구현 전 화면 설계 v9 · 지도 © OpenStreetMap contributors</p><div class="slider-nav"><button type="button" data-dir="-1" aria-label="이전 화면">←</button><span class="slider-count">1 / 4</span><button type="button" data-dir="1" aria-label="다음 화면">→</button></div></div>
+          </div>
+          <section class="story" aria-label="RunWay 핵심 기여 1">
+            <p class="story-label">핵심 기여 1</p>
+            <h4>느린 건 길찾기가 아니라 그래프 만드는 부분이었습니다</h4>
+            <ol>
+              <li><span>현상</span><p>코스 추천 첫 요청이 5km는 3.72초, 10km는 12.92초 걸렸습니다.</p></li>
+              <li><span>원인</span><p>단계별로 시간을 확인해 보니 그래프를 만드는 데 가장 오래 걸렸고, 그래프에 길을 하나씩 넣는 <code>add_edge</code> 호출만 37만 번쯤 됐습니다.</p></li>
+              <li><span>해결</span><p>길찾기 방식은 그대로 두고 그래프 만드는 부분을 줄였습니다. 요청마다 처음부터 만들던 데이터는 한 번만 만들어 다시 쓰고, 지도를 격자로 나눠 요청한 범위에 걸리는 길만 골라 넣어 add_edge 호출을 줄였습니다. 겹치는 계산은 저장해 두고 다시 썼습니다.</p></li>
+              <li><span>검증</span><p>빨라졌는데 추천이 바뀌면 의미가 없어서, 기존 방식과 10개 조건으로 비교했습니다. 만들어진 그래프와 경로, 전체 순위, 추천 TOP3가 모두 같았습니다.</p></li>
+              <li><span>결과</span><p>그래프 만드는 단계만 보면 5km 2.13초 → 0.62초로 70.9%, 10km 8.32초 → 2.59초로 68.9% 줄었습니다. 첫 요청 전체 시간은 5km 3.72초 → 2.04초(45.2%), 10km 12.92초 → 8.08초(37.5%) 줄었습니다.</p></li>
+            </ol>
+          </section>
+          <section class="story" aria-label="RunWay 핵심 기여 2">
+            <p class="story-label">핵심 기여 2</p>
+            <h4>평균은 가장 정확했지만, 가끔 거꾸로 예측했습니다</h4>
+            <ol>
+              <li><span>현상</span><p>비교한 모델 중 평균 오차(MAE)가 3.143 bpm으로 가장 작은 모델도, 속도를 초속 0.5m 높여 보니 100번 중 12번꼴(12.0%)로 거꾸로 된 예측을 했습니다. 더 빨리 달리는데 심박은 내려간다고 예측한 것입니다.</p></li>
+              <li><span>원인</span><p>이 예측은 사용자에게 페이스를 제안하는 데 씁니다. 속도가 빨라졌는데 심박 예측이 낮아지면, 사용자에게 맞지 않는 페이스를 제안할 수 있습니다. 평균 오차만 봐서는 이 문제가 드러나지 않았습니다.</p></li>
+              <li><span>해결</span><p>Transformer 1개와 GRU 3개를 합친 모델을, 속도가 오르면 심박 예측도 오르도록 한 번 더 학습시켰습니다. Transformer 하나로 따로 시험했을 때도 거꾸로 된 예측이 11.5% → 1.7%로 줄었고, 평균 오차는 거의 그대로(+0.013 bpm)였습니다.</p></li>
+              <li><span>검증</span><p>평균 오차와 거꾸로 된 예측 비율을 함께 비교했습니다. 거꾸로 된 예측은 "속도를 초속 0.5m 올렸는데 1분 뒤 심박이 내려간다고 예측한 경우"로 정해, 시험 데이터 전체에서 셌습니다. 2분 뒤 예측은 지금 심박을 그대로 쓰는 단순한 방법보다 오차가 1.64 bpm 작았습니다.</p></li>
+              <li><span>결과</span><p>평균 오차는 3.143에서 3.159 bpm으로 거의 그대로(+0.016)였고, 거꾸로 된 예측은 12.0%에서 0.6%로 줄었습니다.</p></li>
+            </ol>
+          </section>
+        </article>
+
+        <div class="case-group"><p class="case-group-label">PART 2 · 시스템과 서비스</p><p>장비를 직접 붙이고, 웹 서비스를 끝까지 만든 프로젝트</p></div>
+
+        <article class="case" id="case-r0ki" aria-labelledby="r0ki-title">
+          <div class="case-head">
+            <div><p class="case-kind">03 / IOT · SYSTEM INTEGRATION</p><h3 id="r0ki-title">R0-KI<small>APARTMENT PATROL ROBOT</small></h3></div>
+            <div class="case-meta"><p>2026.07.06 — 08.14 · 팀장</p><span class="badge">팀 프로젝트 우수상</span></div>
+          </div>
+          <div class="case-cols">
+            <div>
+              <p class="case-intro">아파트 단지를 순찰하며 이상 상황을 감지하고, 실시간으로 상태를 확인할 수 있는 자율주행 순찰 로봇입니다. 저는 팀장이자 IoT 파트를 맡아 ESP32, Jetson Orin Nano, ROS2, MQTT로 센서와 로봇, 서버 사이 통신을 연결했습니다.</p>
+              <dl class="case-facts">
+                <div><dt>담당</dt><dd>ROS2·MQTT 로봇 통신 연동, 로그 파싱·모니터링 환경, 일정 관리</dd></div>
+                <div><dt>사용 기술</dt><dd>ESP32, Jetson Orin Nano, ROS2, MQTT, Jira</dd></div>
+                <div><dt>저장소</dt><dd><a href="https://github.com/seongyun-dev/R0-KI" target="_blank" rel="noopener noreferrer">github.com/seongyun-dev/R0-KI ↗</a></dd></div>
+              </dl>
+              <ul class="steps">
+                <li><strong>센서, 로봇, 서버를 하나로 연결했습니다</strong><p>ESP32, Jetson Orin Nano, ROS2, MQTT를 써서 센서와 로봇, 서버 사이 통신을 연동했습니다.</p></li>
+                <li><strong>로그를 한 화면에 모았습니다</strong><p>MQTT 메시지, ROS2 Topic, 센서 값, 로봇 상태처럼 시스템마다 다른 형태로 나오는 로그를 파싱하고 정규화해서, 한 화면에서 보는 모니터링 환경을 만들었습니다.</p></li>
+                <li><strong>로봇 상태 페이지를 만들었습니다</strong><p>로봇별 배터리와 위치, 카메라·라이다·휠 모터·구동부 상태, 누적 주행과 가동률을 보는 로봇 목록과 상세 화면을 만들었습니다.</p></li>
+                <li><strong>Jira로 진행 상황과 일정을 맞췄습니다</strong><p>팀장으로 업무 진행 상황을 관리하고 팀원 간 개발 일정을 조율했습니다.</p></li>
+              </ul>
+            </div>
+            <div class="results">
+              <h4>결과</h4>
+              <dl>
+                <div><dt>수상</dt><dd><strong>우수상</strong><small>SSAFY AIoT 프로젝트</small></dd></div>
+                <div><dt>문제 구간 찾기</dt><dd><strong>로그를 한 화면에</strong><small>MQTT 메시지, ROS2 Topic, 센서 값, 로봇 상태</small></dd></div>
+                <div><dt>명령 흐름 추적</dt><dd><strong>서버 → MQTT → ROS2 → 로봇</strong><small>사용자 명령이 로봇 동작까지 가는 단계별 확인</small></dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="slider" data-slider>
+            <div class="slider-track" tabindex="0" aria-label="R0-KI 실제 화면">
+              <figure class="slide"><img src="assets/r0ki-robot-detail.jpg" alt="로봇 상세 화면: 3D 로봇 모델 주변에 카메라, 라이다, 휠 모터, 구동부 상태와 배터리 78퍼센트, 누적 주행, 가동률 표시" width="2880" height="1800" loading="lazy"><figcaption>로봇 상세: 배터리, 부위별 상태, 누적 주행과 가동률</figcaption></figure>
+              <figure class="slide"><img src="assets/r0ki-robot-list.jpg" alt="로봇 목록 화면: 로봇별 상태, 배터리, 현재 위치, 최근 순찰 시간" width="2880" height="1800" loading="lazy"><figcaption>로봇 목록: 로봇별 상태와 배터리</figcaption></figure>
+              <figure class="slide"><img src="assets/r0ki-zone-editor.png" alt="주차장, 분리수거장, 위험구역 같은 순찰 구역을 등록하는 구역 편집기" width="1440" height="900" loading="lazy"><figcaption>순찰 구역 등록</figcaption></figure>
+              <figure class="slide"><img src="assets/r0ki-waypoint-editor.png" alt="순찰 구역과 waypoint를 설정하는 경로 편집기" width="1440" height="900" loading="lazy"><figcaption>waypoint 경로 편집</figcaption></figure>
+            </div>
+            <div class="slider-bar"><div class="slider-nav"><button type="button" data-dir="-1" aria-label="이전 화면">←</button><span class="slider-count">1 / 4</span><button type="button" data-dir="1" aria-label="다음 화면">→</button></div></div>
+          </div>
+          <section class="story" aria-label="R0-KI 핵심 기여">
+            <p class="story-label">핵심 기여</p>
+            <h4>시스템마다 로그가 달라서, 어디서 멈췄는지 바로 알 수 없었습니다</h4>
+            <ol>
+              <li><span>현상</span><p>여러 시스템을 연결하자 로봇이 예상대로 움직이지 않을 때가 있었습니다.</p></li>
+              <li><span>원인</span><p>각 시스템의 로그가 서로 다른 형태로 나와서, 문제가 어디서 생겼는지 빨리 찾기 어려웠습니다.</p></li>
+              <li><span>해결</span><p>MQTT 메시지, ROS2 Topic, 센서 값, 로봇 상태 로그를 파싱하고 정규화해서 한 화면에서 볼 수 있게 했습니다.</p></li>
+              <li><span>결과</span><p>이 모니터링 화면에서 사용자 명령이 서버에서 MQTT와 ROS2를 거쳐 로봇 동작으로 이어지는 흐름(User Command → Backend → MQTT → ROS2 → Robot State → Robot Action)을 단계별로 따라가며, 로봇이 어느 단계에서 멈췄는지 찾아 고쳤습니다.</p></li>
+            </ol>
+          </section>
+        </article>
+
+        <article class="case" id="case-hallae" aria-labelledby="hallae-title">
+          <div class="case-head">
+            <div><p class="case-kind">04 / FULL-STACK</p><h3 id="hallae-title">할래말래<small>BOARD GAME RECOMMENDER</small></h3></div>
+            <div class="case-meta"><p>2026.06.04 — 06.19 · 2인 팀 · 팀장</p><span class="badge">팀 프로젝트 최우수상</span></div>
+          </div>
+          <div class="case-cols">
+            <div>
+              <p class="case-intro">사용자의 취향과 조건을 바탕으로 보드게임을 추천하고 관련 정보를 보여주는 웹 서비스입니다. 2인 팀의 팀장으로 서비스 기획과 일정 조율을 맡았고, Django와 Vue로 커뮤니티, 마이페이지, 보드게임 랭킹, 지도 연동의 화면과 API를 만들었습니다.</p>
+              <dl class="case-facts">
+                <div><dt>담당</dt><dd>기획, 일정 조율, 커뮤니티·마이페이지·랭킹·지도 연동</dd></div>
+                <div><dt>사용 기술</dt><dd>Django, Vue</dd></div>
+              </dl>
+              <ul class="steps">
+                <li><strong>기능 단위로 나눠 각자 화면과 API를 맡았습니다</strong><p>팀원과 기능 단위로 역할을 나눠, 각자 맡은 기능은 Frontend와 Backend를 함께 개발했습니다.</p></li>
+                <li><strong>커뮤니티, 마이페이지, 랭킹, 지도 연동을 만들었습니다</strong><p>제가 맡은 기능은 Vue 화면부터 Django API까지 직접 연결했습니다.</p></li>
+                <li><strong>중간에 범위를 다시 정리했습니다</strong><p>처음에는 사용자 흐름과 기능 범위가 충분히 정리되지 않아 일부 기능을 고쳐야 했습니다. 필수 기능과 우선순위를 다시 정해 범위를 조정하고 서비스를 완성했습니다.</p></li>
+              </ul>
+            </div>
+            <div class="results">
+              <h4>결과</h4>
+              <dl>
+                <div><dt>수상</dt><dd><strong>최우수상</strong><small>SSAFY 프로젝트</small></dd></div>
+                <div><dt>맡은 기능</dt><dd><strong>4개</strong><small>커뮤니티, 마이페이지, 랭킹, 지도 연동</small></dd></div>
+                <div><dt>역할</dt><dd><strong>팀장</strong><small>서비스 기획과 일정 조율</small></dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="slider" data-slider>
+            <div class="slider-track" tabindex="0" aria-label="할래말래 실제 화면">
+              <figure class="slide"><img src="assets/hallae-home.jpg" alt="오늘의 맞춤 추천과 인기 보드게임이 있는 할래말래 홈 화면" width="2880" height="1620" loading="lazy"><figcaption>홈</figcaption></figure>
+              <figure class="slide"><img src="assets/hallae-recommend.jpg" alt="인원 4명, 60분, 보통 난이도 조건으로 받은 보드게임 추천 목록" width="2880" height="1620" loading="lazy"><figcaption>조건으로 받은 추천 결과</figcaption></figure>
+              <figure class="slide"><img src="assets/hallae-similar.jpg" alt="게임 상세 화면의 비슷한 보드게임 추천 목록" width="2880" height="1620" loading="lazy"><figcaption>비슷한 게임 추천</figcaption></figure>
+              <figure class="slide"><img src="assets/hallae-ranking.jpg" alt="보드게임 카페 대표 인기 게임 랭킹 화면" width="2880" height="1620" loading="lazy"><figcaption>보드게임 랭킹 (제가 만든 화면)</figcaption></figure>
+              <figure class="slide"><img src="assets/hallae-community.jpg" alt="말머리별로 글을 나누는 커뮤니티 목록 화면" width="2880" height="1620" loading="lazy"><figcaption>커뮤니티 (제가 만든 화면)</figcaption></figure>
+            </div>
+            <div class="slider-bar"><div class="slider-nav"><button type="button" data-dir="-1" aria-label="이전 화면">←</button><span class="slider-count">1 / 5</span><button type="button" data-dir="1" aria-label="다음 화면">→</button></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="activities-section" id="activities" aria-labelledby="activities-title">
+      <div class="wrap">
+        <p class="section-label">02 / ACTIVITIES</p>
+        <div class="section-head"><h2 id="activities-title">대외활동</h2></div>
+        <div class="activity-grid">
+          <article><span class="card-key">2023 · 해외봉사</span><h3>해외봉사단 부단장, 베트남 나트랑 보육원</h3><p>2023.01.11 – 01.21. 열흘 남짓한 봉사 기간 동안 일정과 인원을 챙기고, 현지 프로그램 운영을 도왔습니다. 팀원들 사이 소통도 제가 맡았습니다.</p></article>
+          <article><span class="card-key">2022 · 동명대학교</span><h3>총동아리연합회 회장</h3><p>2022.01 – 2022.12. 동아리 박람회와 행사를 기획하고, 학생들 의견을 모아 조직을 꾸렸습니다. 예산 관리와 대외 협력도 했습니다.</p></article>        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="section-label">03 / BACKGROUND</p>
+        <div class="section-head"><h2 id="about-title">경력 · 교육 · 프로젝트</h2></div>
+        <div class="about-grid">
+          <div>
+            <div class="about-group">
+              <h3>경력</h3>
+              <div class="about-row"><span class="when">2024.09 — 2025.11</span><div><strong>에스가드 · 안전관리 (정규직)</strong><p>작업자 안전교육, 보호구 점검, 작업허가서 관리, 협력업체 안전관리와 현장 점검을 맡았습니다. 문서만으로 판단하기 어려운 부분은 현장에 가서 작업자와 이야기하며 확인했습니다.</p></div></div>
+            </div>
+            <div class="about-group">
+              <h3>교육 · 학력</h3>
+              <div class="about-row"><span class="when">2026 — 현재</span><div><strong>SSAFY 15기</strong><p>Python 트랙</p></div></div>
+              <div class="about-row"><span class="when">2017.03 — 2023.02</span><div><strong>동명대학교 냉동공조공학과</strong><p>졸업</p></div></div>
+            </div>
+            <div class="about-group">
+              <h3>프로젝트</h3>
+              <div class="about-row"><span class="when">2026.10 — 11</span><div><strong>RunWay · 팀원</strong><p>AI. 심박 예측, 코스 생성. 진행 중</p></div></div>
+              <div class="about-row"><span class="when">2026.08 — 10</span><div><strong>GitJob · 팀장</strong><p>Data Engineering. 팀 프로젝트 우수상</p></div></div>
+              <div class="about-row"><span class="when">2026.07 — 08</span><div><strong>R0-KI · 팀장</strong><p>IoT. 팀 프로젝트 우수상</p></div></div>
+              <div class="about-row"><span class="when">2026.06</span><div><strong>할래말래 · 팀장</strong><p>Full-stack. SSAFY 1학기 프로젝트, 최우수상</p></div></div>
+            </div>
+          </div>
+          <div>
+            <div class="about-group" id="awards">
+              <h3>수상</h3>
+              <div class="about-row"><span class="when">2026</span><div><strong>할래말래 — 최우수상</strong><p>SSAFY 프로젝트</p></div></div>
+              <div class="about-row"><span class="when">2026</span><div><strong>R0-KI — 우수상</strong><p>SSAFY AIoT 프로젝트</p></div></div>
+              <div class="about-row"><span class="when">2026</span><div><strong>GitJob — 우수상</strong><p>SSAFY 빅데이터 분산 프로젝트</p></div></div>
+            </div>
+            <div class="about-group">
+              <h3>프로젝트에서 써 본 기술</h3>
+              <div class="about-row"><span class="when">Data</span><div class="chips"><span class="chip">Kafka</span><span class="chip">Spark</span><span class="chip">HDFS</span><span class="chip">Redis</span><span class="chip">Prometheus</span><span class="chip">Grafana</span></div></div>
+              <div class="about-row"><span class="when">AI</span><div class="chips"><span class="chip">GRU</span><span class="chip">Transformer</span></div></div>
+              <div class="about-row"><span class="when">SW · IoT</span><div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">Vue</span><span class="chip">ESP32</span><span class="chip">Jetson</span><span class="chip">ROS2</span><span class="chip">MQTT</span><span class="chip">Jira</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-in">
+        <div>
+          <p class="section-label">04 / CONTACT</p>
+          <h2 id="contact-title">궁금한 점이 있으면<br>편하게 연락 주세요.</h2>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:anjong777@naver.com">anjong777@naver.com ↗</a>
+          <a href="https://github.com/seongyun-dev" target="_blank" rel="noopener noreferrer">github.com/seongyun-dev ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-in"><span>© 2026 안성윤 · 포트폴리오</span><a href="#top">맨 위로 ↑</a></div>
+  </footer>
+</body>
+</html>
