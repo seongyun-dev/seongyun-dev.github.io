@@ -143,7 +143,7 @@ code { font: .9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
 /* Activities */
 .activities-section { padding: 66px 0; border-bottom: 1px solid var(--line); }
-.activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 30px; }
+.activity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px 30px; }
 .activity-grid article { padding-top: 16px; border-top: 1px solid #b8d3d1; }
 .activity-grid h3 { margin: 6px 0 8px; font-size: 17px; font-weight: 700; line-height: 1.55; letter-spacing: -.025em; }
 .activity-grid p { color: #455758; font-size: 14px; line-height: 1.85; }
@@ -175,6 +175,7 @@ code { font: .9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   .hero { grid-template-columns: minmax(0, 1fr) 240px; gap: 40px 40px; }
   .portrait { width: 240px; height: 320px; }
   .shortcuts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case-cols, .about-grid { grid-template-columns: minmax(0, 1fr); gap: 27px; }
 }
 @media (max-width: 760px) {
