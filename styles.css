@@ -138,6 +138,19 @@ code { font: .9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .story li > span { padding-top: 4px; color: var(--mint-deep); font-size: 14px; font-weight: 700; }
 .story li > p { max-width: 760px; color: var(--ink-soft); font-size: 15.5px; line-height: 1.85; }
 
+/* Data flow (GitJob) */
+.flow { margin-top: 36px; padding: 24px 26px 20px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--white); }
+.flow-title { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 18px; color: var(--mint-deep); font-size: 14px; font-weight: 700; }
+.flow-key { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-soft); font-size: 12.5px; font-weight: 600; }
+.flow-key i { width: 12px; height: 12px; border: 1.5px solid var(--mint-dark); border-radius: 4px; background: var(--mint-pale); }
+.flow-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
+.flow-steps li { position: relative; padding: 13px 14px 12px; border: 1px solid var(--line); border-radius: var(--r); background: var(--paper); }
+.flow-steps li.mine { border: 1.5px solid var(--mint-dark); background: var(--mint-pale); }
+.flow-steps li + li::before { content: "→"; position: absolute; top: 50%; left: -19px; color: var(--muted); font-size: 14px; line-height: 1; transform: translateY(-50%); }
+.flow-steps strong { display: block; font-size: 14.5px; font-weight: 750; line-height: 1.5; }
+.flow-steps small { display: block; margin-top: 4px; color: var(--ink-soft); font-size: 12.5px; line-height: 1.6; }
+.flow-side { margin-top: 16px; color: var(--ink-soft); font-size: 13.5px; line-height: 1.75; }
+
 /* Shared card label */
 .card-key { color: var(--mint-dark); font-size: 11px; font-weight: 750; letter-spacing: .09em; }
 
@@ -177,6 +190,8 @@ code { font: .9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   .shortcuts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case-cols, .about-grid { grid-template-columns: minmax(0, 1fr); gap: 27px; }
+  .flow-steps { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .flow-steps li + li::before { content: "↓"; top: -18px; left: 22px; transform: none; }
 }
 @media (max-width: 760px) {
   body { font-size: 16px; }
@@ -220,5 +235,5 @@ code { font: .9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   .slide { flex-basis: 48%; }
   .hero-band, .about-section { background: none; }
   .contact-section, .site-foot { background: none; color: var(--ink); }
-  .case, .story, .results { break-inside: avoid-page; }
+  .case, .story, .results, .flow { break-inside: avoid-page; }
 }

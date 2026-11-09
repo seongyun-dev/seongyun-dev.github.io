@@ -7,7 +7,7 @@
   <title>안성윤 · 포트폴리오</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" crossorigin>
-  <link href="styles.css?v=15" rel="stylesheet">
+  <link href="styles.css?v=16" rel="stylesheet">
   <script src="site.js?v=11" defer></script>
 </head>
 <body>
@@ -23,13 +23,13 @@
     <div class="hero-band">
       <section class="wrap hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">DATA · AI · SYSTEM</p>
-          <h1 id="hero-title">안녕하세요,<br><span>저는 안성윤입니다.</span></h1>
-          <p class="hero-name">Full-stack → System Integration → Data Engineering → AI</p>
-          <p class="hero-intro">냉동공조공학을 전공하고 에스가드에서 1년 2개월 동안 안전관리자로 일했습니다. 같은 기준이라도 작업과 사람, 현장 상황에 따라 확인할 위험이 달라서, 서류로 판단하기 어려운 건 현장에 가서 작업자와 직접 확인했습니다. 지금은 SSAFY 15기에서 개발을 배우고 있고, 데이터를 볼 때도 그 숫자가 어디서 어떻게 나왔는지부터 확인합니다.</p>
+          <p class="eyebrow">DATA ENGINEERING</p>
+          <h1 id="hero-title">데이터를 처리하고,<br><span>끝까지 확인하는 안성윤입니다.</span></h1>
+          <p class="hero-name">거쳐 온 프로젝트 · Full-stack → System Integration → Data Engineering → AI</p>
+          <p class="hero-intro">SSAFY 15기에서 데이터 파이프라인과 AI 프로젝트를 하고 있습니다. GitJob에서는 GH Archive 6개월치 이벤트 6억 6천만 건을 Spark로 집계하고 같은 코드의 분석 결과를 다시 쓰는 구조를 만들었고, RunWay에서는 학습 데이터 검증과 모델 평가를 맡았습니다. 개발을 시작하기 전에는 에스가드에서 1년 2개월 동안 안전관리자로 일했습니다. 같은 기준이라도 현장마다 확인할 게 달라 서류로 판단하기 어려운 건 직접 가서 확인했고, 데이터를 볼 때도 그 숫자가 어디서 어떻게 나왔는지부터 봅니다.</p>
           <div class="hero-links">
             <a class="button button-mint" href="#cases">프로젝트 보기 <span aria-hidden="true">↓</span></a>
-            <a class="button" href="mailto:anjong777@naver.com">이메일 보내기 <span aria-hidden="true">↗</span></a>
+            <a class="button" href="mailto:anjjong777@naver.com">이메일 보내기 <span aria-hidden="true">↗</span></a>
             <button class="text-button" type="button" data-print>인쇄·PDF 저장</button>
           </div>
         </div>
@@ -71,11 +71,12 @@
               <dl class="case-facts">
                 <div><dt>담당</dt><dd>배치 처리·HDFS·Spark, GitHub 저장소 매핑, Artifact 재사용 구조, 모니터링</dd></div>
                 <div><dt>사용 기술</dt><dd>Python, PySpark, Kafka, HDFS, Parquet, Redis, Docker, Prometheus, Grafana</dd></div>
+                <div><dt>데이터</dt><dd>GH Archive 6개월(2026.03–08) · 시간별 파일 4,416개 · 이벤트 660,081,904건 · 압축 해제 약 580GiB</dd></div>
                 <div><dt>저장소</dt><dd><a href="https://github.com/seongyun-dev/GitJob" target="_blank" rel="noopener noreferrer">github.com/seongyun-dev/GitJob ↗</a></dd></div>
               </dl>
               <ul class="steps">
-                <li><strong>원본과 처리 결과는 따로</strong><p>대용량 원본은 HDFS에 그대로 두고, Spark로 처리한 결과는 Parquet 파일로 관리했습니다. 저장소별·기간별 활동량과 Top-N 집계도 이 단계에서 만들었습니다.</p></li>
-                <li><strong>작업마다 다른 Kafka consumer</strong><p>적재, 추출, 집계를 서로 다른 consumer가 맡아 작업을 따로 돌렸고, 문제가 생기면 Snapshot과 Checkpoint를 기준으로 그 구간만 다시 처리할 수 있게 했습니다.</p></li>
+                <li><strong>6억 6천만 건을 Spark로 집계</strong><p>6개월치 GH Archive 원본은 HDFS에 그대로 두고, Spark로 분산 집계해 저장소 47,466,125개의 활동량을 Parquet으로 만들었습니다. 한 번 도는 데 약 3시간 10분이 걸렸고, 주차별 활동량과 Top-N 집계도 따로 만들었습니다.</p></li>
+                <li><strong>실시간 경로는 팀 consumer와 연결</strong><p>실시간 이벤트는 적재, 추출, 집계를 서로 다른 Kafka consumer가 맡는 팀 구조였습니다. 저는 그 결과를 원본 집계와 같은 형식으로 맞춰 주차별 집계에 합치고, Snapshot과 Checkpoint로 필요한 구간만 다시 처리할 수 있게 했습니다.</p></li>
                 <li><strong>같은 코드는 한 번만 분석</strong><p>repo_id + commit SHA를 키로 Redis에 인덱스를 두고, 코드 버전이 같을 때만 따로 저장해 둔 분석 결과(Artifact)를 다시 썼습니다.</p></li>
                 <li><strong>Prometheus·Grafana로 상태 확인</strong><p>서버 자원과 Kafka, HDFS 상태를 한 화면에서 보면서 파이프라인 어디가 이상한지 확인했습니다.</p></li>
               </ul>
@@ -88,6 +89,17 @@
               </dl>
             </div>
           </div>
+          <figure class="flow" aria-label="GitJob 데이터 흐름">
+            <figcaption class="flow-title">데이터 흐름 <span class="flow-key"><i aria-hidden="true"></i>제가 맡은 부분</span></figcaption>
+            <ol class="flow-steps">
+              <li class="mine"><strong>GH Archive 원본</strong><small>6개월 · 시간별 파일 4,416개</small></li>
+              <li class="mine"><strong>HDFS 보관</strong><small>압축 해제 약 580GiB</small></li>
+              <li class="mine"><strong>Spark 집계</strong><small>이벤트 6.6억 건 → 저장소별·주차별 Parquet</small></li>
+              <li class="mine"><strong>Artifact 확보·재사용</strong><small>repo_id + commit SHA, Redis 인덱스</small></li>
+              <li><strong>분석 파트</strong><small>기술 근거 추출, 채용공고 매칭</small></li>
+            </ol>
+            <p class="flow-side">실시간 이벤트는 팀이 만든 Kafka consumer를 거쳐 같은 Parquet 형식으로 들어오고, 주차별 집계에서 원본 집계와 합쳐집니다.</p>
+          </figure>
           <div class="slider" data-slider>
             <div class="slider-track" tabindex="0" aria-label="GitJob 실제 서비스 화면">
               <figure class="slide"><img src="assets/gitjob-home.png" alt="GitJob 시작 화면" width="2880" height="1530" loading="lazy"><figcaption>시작 화면</figcaption></figure>
@@ -101,14 +113,24 @@
             </div>
             <div class="slider-bar"><div class="slider-nav"><button type="button" data-dir="-1" aria-label="이전 화면">←</button><span class="slider-count">1 / 8</span><button type="button" data-dir="1" aria-label="다음 화면">→</button></div></div>
           </div>
-          <section class="story" aria-label="GitJob 핵심 기여">
-            <p class="story-label">핵심 기여</p>
+          <section class="story" aria-label="GitJob 핵심 기여 1">
+            <p class="story-label">핵심 기여 1</p>
             <h4>같은 저장소여도, 커밋이 같을 때만 결과를 다시 썼습니다</h4>
             <ol>
               <li><span>현상</span><p>같은 저장소를 분석할 때마다 근거를 처음부터 다시 확인하느라, GitHub API 호출이 많고 시간도 오래 걸렸습니다.</p></li>
               <li><span>원인</span><p>이미 분석한 결과를 다시 쓸 기준이 없었습니다. 저장소 단위로만 재사용하면(Repository-only) 호출은 더 줄겠지만, 같은 저장소라도 commit이 바뀌면 코드가 달라서 예전 버전의 분석 결과가 그대로 나갈 수 있었습니다.</p></li>
               <li><span>해결</span><p>재사용 기준을 저장소가 아니라 코드 버전으로 잡았습니다. repo_id + commit SHA가 모두 같을 때만 저장해 둔 Artifact를 다시 쓰고, Redis는 그 Artifact를 찾는 인덱스로만 썼습니다. 결과 파일은 별도 저장 공간에 두었습니다.</p></li>
               <li><span>결과</span><p>같은 저장소 묶음을 재사용 전후로 돌려 보니 GitHub API 호출이 2,971회에서 2,461회로 17.17% 줄었습니다. 처리 시간도 1,125초에서 937초로 줄었지만, Redis 하나의 효과라기보다 인덱스와 재사용 구조를 함께 적용한 결과로 보고 있습니다.</p></li>
+            </ol>
+          </section>
+          <section class="story" aria-label="GitJob 핵심 기여 2">
+            <p class="story-label">핵심 기여 2</p>
+            <h4>계획만 봤는데, 다음에 본 계획이 달라져 있었습니다</h4>
+            <ol>
+              <li><span>현상</span><p>채용공고 분석 입력을 다시 채우는 backfill 도구는 기본이 dry run, 즉 무엇을 할지 계획만 보여 주고 아무것도 쓰지 않는 모드입니다. 그런데 같은 dry run을 다시 돌리면, 처음에 '이미 올라감'으로 나온 회차가 '체크포인트로 건너뜀'으로 바뀌어 나왔습니다.</p></li>
+              <li><span>원인</span><p>이미 올라간 회차를 만나면 재개용 checkpoint 파일에 기록하는 코드가, dry run인지 확인하기 전에 실행되고 있었습니다. 계획을 읽기만 해도 재개 파일이 바뀌어서, 승인한 계획과 다음에 보는 계획이 달라졌습니다.</p></li>
+              <li><span>해결</span><p>dry run일 때는 checkpoint를 기록하지 않도록 조건을 고쳤습니다. 실제 실행(--execute)에서는 그대로 기록해서, 중간에 멈춰도 이어서 처리할 수 있게 두었습니다.</p></li>
+              <li><span>결과</span><p>dry run을 반복해도 checkpoint 파일이 바이트 단위로 같은지, dry run이 아무것도 올리지 않는지, 실제 실행은 여전히 기록하는지 테스트 6개로 확인했습니다.</p></li>
             </ol>
           </section>
         </article>
@@ -186,14 +208,14 @@
             <div>
               <p class="case-intro">아파트 단지를 순찰하며 이상 상황을 감지하고, 실시간으로 상태를 확인할 수 있는 자율주행 순찰 로봇입니다. 저는 팀장이자 IoT 파트를 맡아 ESP32, Jetson Orin Nano, ROS2, MQTT로 센서와 로봇, 서버 사이 통신을 연결했습니다.</p>
               <dl class="case-facts">
-                <div><dt>담당</dt><dd>ROS2·MQTT 로봇 통신 연동, 로그 파싱·모니터링 환경, 일정 관리</dd></div>
+                <div><dt>담당</dt><dd>ROS2·MQTT 로봇 통신 연동, 장치 로그 파싱·정규화, 2.5D 지도·구역 편집 화면 보정, 일정 관리</dd></div>
                 <div><dt>사용 기술</dt><dd>ESP32, Jetson Orin Nano, ROS2, MQTT, Jira</dd></div>
                 <div><dt>저장소</dt><dd><a href="https://github.com/seongyun-dev/R0-KI" target="_blank" rel="noopener noreferrer">github.com/seongyun-dev/R0-KI ↗</a></dd></div>
               </dl>
               <ul class="steps">
                 <li><strong>센서, 로봇, 서버 통신 연동</strong><p>ESP32, Jetson Orin Nano, ROS2, MQTT를 써서 센서와 로봇, 서버 사이 통신을 연결했습니다.</p></li>
-                <li><strong>흩어진 로그를 한 화면에</strong><p>MQTT 메시지, ROS2 Topic, 센서 값, 로봇 상태처럼 시스템마다 다른 형태로 나오는 로그를 파싱하고 정규화해, 한 화면에서 보는 모니터링 환경을 만들었습니다.</p></li>
-                <li><strong>로봇 상태 페이지를 만들었습니다</strong><p>로봇별 배터리와 위치, 카메라·라이다·휠 모터·구동부 상태, 누적 주행과 가동률을 보는 로봇 목록과 상세 화면을 만들었습니다.</p></li>
+                <li><strong>흩어진 로그를 한 형식으로</strong><p>MQTT 메시지, ROS2 Topic, 센서 값, 로봇 상태처럼 장치마다 다른 형태로 나오는 로그를 파싱하고 정규화해, 모니터링 화면이 한곳에서 보여 줄 수 있게 맞췄습니다.</p></li>
+                <li><strong>로봇 상태 화면에 들어갈 데이터</strong><p>배터리와 위치, 카메라·라이다·휠 모터·구동부 상태처럼 장치에서 올라오는 값을 정리해 로봇 목록과 상세 화면에 들어가게 했습니다. 화면 자체는 팀원이 만들었습니다.</p></li>
                 <li><strong>Jira로 일정 관리</strong><p>팀장으로 파트별 진행 상황을 확인하고, 통합 일정에 맞춰 팀원 간 개발 일정을 조율했습니다.</p></li>
               </ul>
             </div>
@@ -207,7 +229,7 @@
           </div>
           <div class="slider" data-slider>
             <div class="slider-track" tabindex="0" aria-label="R0-KI 실제 화면">
-              <figure class="slide"><img src="assets/r0ki-robot-detail.jpg" alt="로봇 상세 화면: 3D 로봇 모델 주변에 카메라, 라이다, 휠 모터, 구동부 상태와 배터리 78퍼센트, 누적 주행, 가동률 표시" width="2880" height="1800" loading="lazy"><figcaption>로봇 상세: 배터리, 부위별 상태, 누적 주행과 가동률</figcaption></figure>
+              <figure class="slide"><img src="assets/r0ki-robot-detail.jpg" alt="로봇 상세 화면: 3D 로봇 모델 주변에 카메라, 라이다, 휠 모터, 구동부 상태와 배터리 78퍼센트, 누적 주행, 가동률 표시" width="2880" height="1800" loading="lazy"><figcaption>로봇 상세: 제가 정리한 상태 데이터가 표시되는 화면</figcaption></figure>
               <figure class="slide"><img src="assets/r0ki-robot-list.jpg" alt="로봇 목록 화면: 로봇별 상태, 배터리, 현재 위치, 최근 순찰 시간" width="2880" height="1800" loading="lazy"><figcaption>로봇 목록: 로봇별 상태와 배터리</figcaption></figure>
               <figure class="slide"><img src="assets/r0ki-zone-editor.png" alt="주차장, 분리수거장, 위험구역 같은 순찰 구역을 등록하는 구역 편집기" width="1440" height="900" loading="lazy"><figcaption>순찰 구역 등록</figcaption></figure>
               <figure class="slide"><img src="assets/r0ki-waypoint-editor.png" alt="순찰 구역과 waypoint를 설정하는 경로 편집기" width="1440" height="900" loading="lazy"><figcaption>waypoint 경로 편집</figcaption></figure>
@@ -334,7 +356,7 @@
           <h2 id="contact-title">궁금한 점이 있으면<br>편하게 연락 주세요.</h2>
         </div>
         <div class="contact-links">
-          <a href="mailto:anjong777@naver.com">anjong777@naver.com ↗</a>
+          <a href="mailto:anjjong777@naver.com">anjjong777@naver.com ↗</a>
           <a href="https://github.com/seongyun-dev" target="_blank" rel="noopener noreferrer">github.com/seongyun-dev ↗</a>
         </div>
       </div>
