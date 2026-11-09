@@ -229,11 +229,50 @@ code { font: .9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 @media (prefers-reduced-motion: reduce) {
   html, .slider-track { scroll-behavior: auto; }
 }
+/* Print / PDF: A4 비율 페이지를 데스크톱 폭(1120px)으로 잡아 화면과 같은 2단 배치로 저장 */
+@page { size: 1120px 1584px; margin: 48px 0; }
 @media print {
-  .site-head, .hero-links, .skip, .slider-nav { display: none; }
-  .slider-track { flex-wrap: wrap; overflow: visible; }
-  .slide { flex-basis: 48%; }
+  html { scroll-behavior: auto; }
+  body { font-size: 17px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .site-head, .hero-links, .skip, .slider-nav, .shortcuts { display: none; }
+  /* 인쇄 엔진이 좁은 폭 미디어쿼리를 적용해도 데스크톱 배치를 유지 */
+  .wrap { width: calc(100% - 96px); }
+  .hero { grid-template-columns: minmax(0, 1fr) 240px; gap: 32px 56px; padding-top: 8px; }
+  .eyebrow { font-size: 20px; }
+  .hero-intro { font-size: 17px; }
+  .hero-side { display: block; }
+  .portrait { width: 240px; height: 320px; border-radius: var(--r-lg) var(--r-lg) 0 0; }
+  .profile-facts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .section-head { display: flex; margin-bottom: 30px; }
+  .case-group { flex-direction: row; align-items: center; gap: 16px; }
+  .case-head { flex-direction: row; gap: 16px; margin-bottom: 28px; }
+  .case-meta { padding-top: 17px; text-align: right; }
+  .case h3 small { display: inline; margin: 0 0 0 10px; }
+  .case-cols { grid-template-columns: minmax(0, 592fr) minmax(0, 528fr); gap: 40px; }
+  .results { padding: 24px; }
+  .flow-steps { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
+  .flow-steps li + li::before { content: "→"; top: 50%; left: -19px; transform: translateY(-50%); }
+  .story { padding: 28px 30px 12px; }
+  .story li { grid-template-columns: 110px minmax(0, 1fr); gap: 20px; }
+  .activity-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .about-grid { grid-template-columns: minmax(0, 582fr) minmax(0, 506fr); gap: 56px; }
+  .about-row { grid-template-columns: 120px minmax(0, 1fr); gap: 19px; }
+  .contact-in { flex-direction: row; align-items: center; }
+  .foot-in { flex-direction: row; }
   .hero-band, .about-section { background: none; }
+  .cases-section { padding-top: 0; break-before: page; }
+  .case-group, .case-head { break-after: avoid; }
+  .case-group { margin-top: 24px; }
+  .case { padding-bottom: 24px; }
+  .slider-track { flex-wrap: wrap; overflow: visible; }
+  .slide { flex: 0 0 calc((100% - 32px) / 3); }
+  .slider.phones .slide { flex: 0 0 calc((100% - 48px) / 4); }
+  .slide figcaption { margin-top: 6px; font-size: 12px; }
+  .story, .results, .flow, .slide, .steps li, .story li, .about-row, .activity-grid article { break-inside: avoid; }
+  .activities-section { padding: 40px 0; break-inside: avoid; }
+  .section-head, .about-group h3 { break-after: avoid; }
+  .about-group, .contact-section { break-inside: avoid; }
+  .about-section { padding: 48px 0; }
   .contact-section, .site-foot { background: none; color: var(--ink); }
-  .case, .story, .results, .flow { break-inside: avoid-page; }
+  .contact-section { padding: 40px 0; border-top: 1px solid var(--line); }
 }
