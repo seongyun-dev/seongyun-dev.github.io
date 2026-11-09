@@ -25,7 +25,7 @@
         <div class="hero-copy">
           <p class="eyebrow">DATA ENGINEERING</p>
           <h1 id="hero-title">안녕하세요,<br><span>데이터 엔지니어 안성윤입니다.</span></h1>
-          <p class="hero-intro">SSAFY 15기에서 데이터 파이프라인과 AI 프로젝트를 하고 있습니다. GitHub 활동으로 개발자의 기술을 분석하는 서비스에서는 공개 GitHub 이벤트 6개월치, 6억 6천만 건을 Spark로 집계하고 같은 코드의 분석 결과를 다시 쓰는 구조를 만들었습니다. 러닝 페이스를 제안하는 AI 서비스에서는 학습 데이터 검증과 모델 평가를 맡았습니다. 개발을 시작하기 전에는 에스가드에서 1년 2개월 동안 안전관리자로 일했습니다. 같은 기준이라도 현장마다 확인할 게 달라 서류로 판단하기 어려운 건 직접 가서 확인했고, 데이터를 볼 때도 그 습관이 남았습니다.</p>
+          <p class="hero-intro">SSAFY 15기 교육생입니다. 팀 프로젝트에서 GitHub 공개 이벤트 6개월치(약 6억 6천만 건)를 Spark로 집계하는 배치 파이프라인을 맡았고, 지금은 러닝 서비스의 학습 데이터와 심박 예측 모델을 만들고 있습니다. 개발을 배우기 전에는 에스가드에서 1년 2개월 동안 현장 안전관리자로 일했습니다.</p>
           <div class="hero-links">
             <a class="button button-mint" href="#cases">프로젝트 보기 <span aria-hidden="true">↓</span></a>
             <a class="button" href="mailto:anjjong777@naver.com">이메일 보내기 <span aria-hidden="true">↗</span></a>
@@ -57,16 +57,16 @@
           <a href="#case-hallae"><span class="shortcut-no">04</span><strong>할래말래</strong><small>보드게임 추천 웹 서비스</small><span class="arrow" aria-hidden="true">↓</span></a>
         </nav>
 
-        <div class="case-group"><p class="case-group-label">PART 1 · 데이터와 AI</p><p>데이터를 모아 처리하고, 예측 모델을 고른 프로젝트</p></div>
+        <div class="case-group"><p class="case-group-label">PART 1 · 데이터와 AI</p><p>데이터 파이프라인, 예측 모델</p></div>
 
         <article class="case" id="case-gitjob" aria-labelledby="gitjob-title">
           <div class="case-head">
             <div><p class="case-kind">01 / DATA ENGINEERING</p><h3 id="gitjob-title">GitJob<small>GITHUB × JOB MATCHING</small></h3></div>
-            <div class="case-meta"><p>2026.08.18 — 10.02 · 팀장</p><span class="badge">팀 프로젝트 우수상</span></div>
+            <div class="case-meta"><p>2026.08.18 — 10.02 · 6인 팀 · 팀장</p><span class="badge">팀 프로젝트 우수상</span></div>
           </div>
           <div class="case-cols">
             <div>
-              <p class="case-intro">사용자의 GitHub 저장소를 분석해 실제로 쓴 기술을 찾고, 채용공고의 기술 수요와 비교해 부족한 기술과 지원할 수 있는 공고를 보여주는 서비스입니다. 저는 팀장을 맡았고, Kafka·Spark·HDFS로 데이터를 처리하는 팀 파이프라인에서 배치 처리와 HDFS·Spark, GitHub 저장소 매핑을 담당했습니다.</p>
+              <p class="case-intro">사용자의 GitHub 저장소를 분석해 실제로 쓴 기술을 찾고, 채용공고의 기술 수요와 비교해 부족한 기술과 지원할 수 있는 공고를 보여 주는 서비스입니다. 팀장을 맡았고, 데이터 파이프라인 중 배치 처리(HDFS·Spark)와 GitHub 저장소 매핑을 담당했습니다.</p>
               <dl class="case-facts">
                 <div><dt>담당</dt><dd>배치 처리·HDFS·Spark, GitHub 저장소 매핑, Artifact 재사용 구조, 모니터링</dd></div>
                 <div><dt>사용 기술</dt><dd>Python, PySpark, Kafka, HDFS, Parquet, Redis, Docker, Prometheus, Grafana</dd></div>
@@ -74,16 +74,16 @@
                 <div><dt>저장소</dt><dd><a href="https://github.com/seongyun-dev/GitJob" target="_blank" rel="noopener noreferrer">github.com/seongyun-dev/GitJob ↗</a></dd></div>
               </dl>
               <ul class="steps">
-                <li><strong>6억 6천만 건을 Spark로 집계</strong><p>6개월치 GH Archive 원본은 HDFS에 그대로 두고, Spark로 분산 집계해 저장소 47,466,125개의 활동량을 Parquet으로 만들었습니다. 한 번 도는 데 약 3시간 10분이 걸렸고, 주차별 활동량과 Top-N 집계도 따로 만들었습니다.</p></li>
-                <li><strong>실시간 경로는 팀 consumer와 연결</strong><p>실시간 이벤트는 적재, 추출, 집계를 서로 다른 Kafka consumer가 맡는 팀 구조였습니다. 저는 그 결과를 원본 집계와 같은 형식으로 맞춰 주차별 집계에 합치고, Snapshot과 Checkpoint로 필요한 구간만 다시 처리할 수 있게 했습니다.</p></li>
-                <li><strong>같은 코드는 한 번만 분석</strong><p>repo_id + commit SHA를 키로 Redis에 인덱스를 두고, 코드 버전이 같을 때만 따로 저장해 둔 분석 결과(Artifact)를 다시 썼습니다.</p></li>
-                <li><strong>Prometheus·Grafana로 상태 확인</strong><p>서버 자원과 Kafka, HDFS 상태를 한 화면에서 보면서 파이프라인 어디가 이상한지 확인했습니다.</p></li>
+                <li><strong>Spark 집계</strong><p>6개월치 GH Archive 원본을 HDFS에 두고 Spark로 분산 집계해, 저장소 47,466,125개의 활동량을 Parquet으로 만들었습니다. 한 번 실행에 약 3시간 10분이 걸렸고, 주차별 활동량과 Top-N 집계도 따로 만들었습니다.</p></li>
+                <li><strong>실시간 경로 연결</strong><p>실시간 이벤트는 적재, 추출, 집계를 서로 다른 Kafka consumer가 맡는 팀 구조였고, consumer는 팀원들이 만들었습니다. 저는 그 출력을 배치 집계와 같은 형식으로 맞춰 주차별 집계에 합치고, Snapshot과 Checkpoint로 필요한 구간만 다시 처리할 수 있게 했습니다.</p></li>
+                <li><strong>Artifact 재사용</strong><p>repo_id + commit SHA를 키로 Redis에 인덱스를 두고, 코드 버전이 같을 때만 따로 저장해 둔 분석 결과(Artifact)를 다시 썼습니다.</p></li>
+                <li><strong>모니터링</strong><p>Prometheus·Grafana로 서버 자원과 Kafka, HDFS 상태를 한 화면에서 확인했습니다.</p></li>
               </ul>
             </div>
             <div class="results">
               <h4>결과</h4>
               <dl>
-                <div><dt>GitHub API 호출</dt><dd><strong>−17.17%</strong><small>같은 저장소 묶음을 Redis에 재사용할 결과가 없을 때와 있을 때 각각 분석해 비교 (2,971회 → 2,461회)</small></dd></div>
+                <div><dt>GitHub API 호출</dt><dd><strong>−17.17%</strong><small>같은 저장소 묶음을 재사용할 결과가 없을 때와 있을 때 각각 분석해 비교 (2,971회 → 2,461회)</small></dd></div>
                 <div><dt>전체 처리 시간</dt><dd><strong>−16.71%</strong><small>같은 비교에서 1,125초 → 937초. 통제된 실험이 아니어서 Rate Limit 같은 외부 요인이 섞였을 수 있는 참고 수치</small></dd></div>
               </dl>
             </div>
@@ -114,17 +114,17 @@
           </div>
           <section class="story" aria-label="GitJob 핵심 기여 1">
             <p class="story-label">핵심 기여 1</p>
-            <h4>같은 저장소여도, 커밋이 같을 때만 결과를 다시 썼습니다</h4>
+            <h4>분석 결과 재사용 기준 정하기</h4>
             <ol>
-              <li><span>현상</span><p>같은 저장소를 분석할 때마다 근거를 처음부터 다시 확인하느라, GitHub API 호출이 많고 시간도 오래 걸렸습니다.</p></li>
-              <li><span>원인</span><p>이미 분석한 결과를 다시 쓸 기준이 없었습니다. 저장소 단위로만 재사용하면(Repository-only) 호출은 더 줄겠지만, 같은 저장소라도 commit이 바뀌면 코드가 달라서 예전 버전의 분석 결과가 그대로 나갈 수 있었습니다.</p></li>
-              <li><span>해결</span><p>재사용 기준을 저장소가 아니라 코드 버전으로 잡았습니다. repo_id + commit SHA가 모두 같을 때만 저장해 둔 Artifact를 다시 쓰고, Redis는 그 Artifact를 찾는 인덱스로만 썼습니다. 결과 파일은 별도 저장 공간에 두었습니다.</p></li>
-              <li><span>결과</span><p>같은 저장소 묶음을 재사용 전후로 돌려 보니 GitHub API 호출이 2,971회에서 2,461회로 17.17% 줄었습니다. 처리 시간도 1,125초에서 937초로 줄었지만, Redis 하나의 효과라기보다 인덱스와 재사용 구조를 함께 적용한 결과로 보고 있습니다.</p></li>
+              <li><span>현상</span><p>같은 저장소를 분석할 때마다 기술 근거를 처음부터 다시 찾느라 GitHub API 호출이 많고 시간도 오래 걸렸습니다.</p></li>
+              <li><span>원인</span><p>이미 분석한 결과를 다시 쓸 기준이 없었습니다. 저장소 단위로 재사용하면(Repository-only) 호출은 더 줄지만, commit이 바뀌어 코드가 달라져도 예전 분석 결과가 그대로 나갈 수 있었습니다.</p></li>
+              <li><span>해결</span><p>재사용 기준을 저장소가 아니라 코드 버전으로 잡았습니다. repo_id + commit SHA가 모두 같을 때만 저장해 둔 Artifact를 다시 쓰고, Redis는 Artifact를 찾는 인덱스로만 썼습니다. 결과 파일은 별도 저장 공간에 두었습니다.</p></li>
+              <li><span>결과</span><p>같은 저장소 묶음을 재사용 전후로 돌려 비교한 결과 GitHub API 호출이 2,971회에서 2,461회로 17.17% 줄었습니다. 처리 시간도 1,125초에서 937초로 줄었지만, Rate Limit 같은 외부 요인이 섞였을 수 있어 참고 수치로만 봅니다.</p></li>
             </ol>
           </section>
           <section class="story" aria-label="GitJob 핵심 기여 2">
             <p class="story-label">핵심 기여 2</p>
-            <h4>계획만 봤는데, 다음에 본 계획이 달라져 있었습니다</h4>
+            <h4>backfill dry run 버그 수정</h4>
             <ol>
               <li><span>현상</span><p>채용공고 분석 입력을 다시 채우는 backfill 도구는 기본이 dry run, 즉 무엇을 할지 계획만 보여 주고 아무것도 쓰지 않는 모드입니다. 그런데 같은 dry run을 다시 돌리면, 처음에 '이미 올라감'으로 나온 회차가 '체크포인트로 건너뜀'으로 바뀌어 나왔습니다.</p></li>
               <li><span>원인</span><p>이미 올라간 회차를 만나면 재개용 checkpoint 파일에 기록하는 코드가, dry run인지 확인하기 전에 실행되고 있었습니다. 계획을 읽기만 해도 재개 파일이 바뀌어서, 승인한 계획과 다음에 보는 계획이 달라졌습니다.</p></li>
@@ -137,29 +137,29 @@
         <article class="case" id="case-runway" aria-labelledby="runway-title">
           <div class="case-head">
             <div><p class="case-kind">02 / AI</p><h3 id="runway-title">RunWay<small>AI RUNNING PACEMAKER</small></h3></div>
-            <div class="case-meta"><p>2026.10.06 — 11.18 · 팀원</p><span class="badge">진행 중</span></div>
+            <div class="case-meta"><p>2026.10.06 — 11.18(예정) · 6인 팀 · 팀원</p><span class="badge">진행 중</span></div>
           </div>
           <div class="case-cols">
             <div>
-              <p class="case-intro">목표 거리와 완주 시간, 현재 심박수와 페이스, 코스 경사를 바탕으로 미래 심박수를 예측해 적정 페이스와 러닝 코스를 제안하는 러닝 페이스메이커입니다. 저는 AI 파트를 맡아 러닝 데이터를 전처리하고 미래 심박 예측 모델을 만들고 있고, OSM 도로 데이터와 직접 모은 러닝 GPX로 코스를 만들어 평가하는 로직을 설계하고 검증하고 있습니다. 지금은 실제 서비스에 쓰기 위해 개인화와 실시간 예측 구조를 다듬고 있습니다.</p>
+              <p class="case-intro">목표 거리와 완주 시간, 현재 심박수와 페이스, 코스 경사로 앞으로의 심박수를 예측해 적정 페이스와 러닝 코스를 추천하는 서비스입니다. AI 파트에서 러닝 데이터 전처리, 심박 예측 모델, OSM 도로 데이터와 러닝 GPX를 이용한 코스 생성·평가 로직을 맡고 있습니다. 지금은 개인화와 실시간 예측 구조를 다듬는 중입니다.</p>
               <dl class="case-facts">
                 <div><dt>담당</dt><dd>러닝 데이터 수집·전처리, 미래 심박 예측 모델, 코스 생성·추천 로직</dd></div>
                 <div><dt>사용 기술</dt><dd>Python, PyTorch, GRU, Transformer, W&amp;B, NetworkX, OpenStreetMap</dd></div>
-                <div><dt>데이터</dt><dd>FitRec 러닝 세션 약 69,169개, 부산 OSM 도로 73,064 ways · 524,108 nodes, 국내 러닝 GPX 299개 (RunnerOn 34, 와리가리 265)</dd></div>
+                <div><dt>데이터</dt><dd>FitRec 러닝 세션 약 6만 9천 개, 부산 OSM 도로 73,064 ways · 524,108 nodes, 국내 러닝 GPX 299개 (RunnerOn 34, 와리가리 265)</dd></div>
               </dl>
               <ul class="steps">
-                <li><strong>학습 데이터 품질부터</strong><p>사용자 단위로 학습·검증·시험 데이터를 나눠 같은 사람의 기록이 평가에 섞이지 않게 했습니다. GPS, 경사, 끊긴 시간 구간, 미래 시점 기록을 점검했고, 경사 값을 채워 넣었는지 표시하는 규칙에 어긋난 기록 295,746건을 0건으로 정리했습니다.</p></li>
-                <li><strong>늦게 반응하는 심박을 고려한 모델 비교</strong><p>심박수는 속도가 바뀐 뒤 조금 늦게 따라옵니다. 이 특성을 반영해 ODE 모델에서 시작해 GRU, Transformer 같은 시계열 모델까지 비교했습니다.</p></li>
-                <li><strong>정확도와 예측 방향을 함께</strong><p>오차가 가장 작은 모델도 속도를 올리면 심박이 내려간다고 예측하는 경우가 있었습니다. 페이스를 제안하는 데 쓸 예측이라, 예측 방향을 평가 기준에 더해 모델을 다시 골랐습니다.</p></li>
-                <li><strong>팀원 모델도 같은 기준으로</strong><p>팀원들이 각자 만든 LightGBM, GRU, Transformer를 같은 데이터와 같은 평가 코드로 평가하도록 기준을 정했습니다. 30초, 60초, 2분 뒤 MAE의 평균을 기본 지표로 씁니다.</p></li>
-                <li><strong>코스 생성이 느린 이유부터</strong><p>단계별로 확인해 보니 길찾기보다 그래프를 만드는 데 시간이 가장 많이 들어, 이 부분부터 줄였습니다.</p></li>
+                <li><strong>학습 데이터 검증</strong><p>사용자 단위로 학습·검증·시험 데이터를 나눠 같은 사람의 기록이 평가에 섞이지 않게 했습니다. GPS, 경사, 끊긴 시간 구간, 미래 시점 기록을 점검했고, 경사 값을 채워 넣었는지 표시하는 규칙에 어긋난 기록 295,746건을 0건으로 정리했습니다.</p></li>
+                <li><strong>모델 비교</strong><p>심박수는 속도가 바뀐 뒤 조금 늦게 따라옵니다. 이 특성을 반영할 수 있는 ODE 모델부터 GRU, Transformer 같은 시계열 모델까지 비교했습니다.</p></li>
+                <li><strong>예측 방향 평가</strong><p>오차가 가장 작은 모델도 속도를 올리면 심박이 내려간다고 예측하는 경우가 있었습니다. 페이스 추천에 쓰는 예측이라 예측 방향도 평가 기준에 넣어 모델을 다시 골랐습니다.</p></li>
+                <li><strong>공통 평가 기준</strong><p>팀원들이 각자 만든 LightGBM, GRU, Transformer를 같은 데이터와 같은 평가 코드로 평가하도록 기준을 정했습니다. 30초, 60초, 2분 뒤 MAE의 평균을 기본 지표로 씁니다.</p></li>
+                <li><strong>코스 생성 속도</strong><p>단계별 소요 시간을 측정해 보니 길찾기보다 그래프를 만드는 단계가 가장 오래 걸려, 이 부분을 줄였습니다.</p></li>
               </ul>
             </div>
             <div class="results">
               <h4>결과</h4>
               <dl>
                 <div><dt>5km 코스 그래프 만드는 시간</dt><dd><strong>70.9%↓</strong><small>2.13초 → 0.62초</small></dd></div>
-                <div><dt>모델 선택</dt><dd><strong>평균 오차보다 서비스에 맞는 모델</strong><small>MAE는 3.143&nbsp;→&nbsp;3.159&nbsp;bpm으로 조금 높지만, 빨리 달리면 심박이 내려간다는 예측을 12.0%&nbsp;→&nbsp;0.6%로 줄였습니다.</small></dd></div>
+                <div><dt>모델 선택</dt><dd><strong>거꾸로 된 예측 12.0%&nbsp;→&nbsp;0.6%</strong><small>MAE는 3.143&nbsp;→&nbsp;3.159&nbsp;bpm으로 조금 늘었지만, 페이스 추천에 쓸 수 있도록 예측 방향이 맞는 모델을 골랐습니다.</small></dd></div>
               </dl>
             </div>
           </div>
@@ -174,34 +174,34 @@
           </div>
           <section class="story" aria-label="RunWay 핵심 기여 1">
             <p class="story-label">핵심 기여 1</p>
-            <h4>느린 건 길찾기가 아니라 그래프 만드는 부분이었습니다</h4>
+            <h4>코스 추천 첫 응답 속도 개선</h4>
             <ol>
               <li><span>현상</span><p>코스 추천 첫 요청이 5km는 3.72초, 10km는 12.92초 걸렸습니다.</p></li>
-              <li><span>원인</span><p>단계별로 시간을 확인해 보니 그래프를 만드는 데 가장 오래 걸렸고, 그래프에 길을 하나씩 넣는 <code>add_edge</code> 호출만 37만 번쯤 됐습니다.</p></li>
-              <li><span>해결</span><p>길찾기 방식은 그대로 두고 그래프 만드는 부분을 줄였습니다. 요청마다 처음부터 만들던 데이터는 한 번만 만들어 다시 쓰고, 지도를 격자로 나눠 요청한 범위에 걸리는 길만 골라 넣어 add_edge 호출을 줄였습니다. 겹치는 계산은 저장해 두고 다시 썼습니다.</p></li>
-              <li><span>검증</span><p>빨라졌는데 추천이 바뀌면 의미가 없어서, 기존 방식과 10개 조건으로 비교했습니다. 만들어진 그래프와 경로, 전체 순위, 추천 TOP3가 모두 같았습니다.</p></li>
+              <li><span>원인</span><p>단계별 소요 시간을 측정해 보니 그래프를 만드는 단계가 가장 오래 걸렸고, 그래프에 길을 하나씩 넣는 <code>add_edge</code> 호출이 약 37만 번이었습니다.</p></li>
+              <li><span>해결</span><p>길찾기 방식은 그대로 두고 그래프 생성 단계만 줄였습니다. 요청마다 새로 만들던 데이터는 한 번만 만들어 재사용하고, 지도를 격자로 나눠 요청 범위에 걸리는 길만 넣어 add_edge 호출을 줄였습니다. 겹치는 계산 결과도 저장해 두고 다시 썼습니다.</p></li>
+              <li><span>검증</span><p>기존 방식과 10개 조건으로 비교해 그래프, 경로, 전체 순위, 추천 TOP3가 모두 같은지 확인했습니다.</p></li>
               <li><span>결과</span><p>그래프 만드는 단계만 보면 5km 2.13초 → 0.62초로 70.9%, 10km 8.32초 → 2.59초로 68.9% 줄었습니다. 첫 요청 전체 시간은 5km 3.72초 → 2.04초(45.2%), 10km 12.92초 → 8.08초(37.5%) 줄었습니다.</p></li>
             </ol>
           </section>
           <section class="story" aria-label="RunWay 핵심 기여 2">
             <p class="story-label">핵심 기여 2</p>
-            <h4>평균은 가장 정확했지만, 가끔 거꾸로 예측했습니다</h4>
+            <h4>심박 예측 방향 오류 줄이기</h4>
             <ol>
-              <li><span>현상</span><p>비교한 모델 중 평균 오차(MAE)가 3.143 bpm으로 가장 작은 모델도, 속도를 초속 0.5m 높여 보니 100번 중 12번꼴(12.0%)로 거꾸로 된 예측을 했습니다. 더 빨리 달리는데 심박은 내려간다고 예측한 것입니다.</p></li>
-              <li><span>원인</span><p>평균 오차는 전체를 평균 내서 보기 때문에, 속도를 바꿨을 때 예측이 어느 쪽으로 움직이는지는 드러나지 않았습니다. 이 예측은 페이스를 제안하는 데 쓰여서, 방향이 거꾸로면 사용자에게 맞지 않는 페이스를 제안할 수 있었습니다.</p></li>
-              <li><span>해결</span><p>Transformer 1개와 GRU 3개를 합친 모델을, 속도가 오르면 심박 예측도 오르도록 한 번 더 학습시켰습니다. Transformer 하나로 따로 시험했을 때도 거꾸로 된 예측이 11.5% → 1.7%로 줄었고, 평균 오차는 거의 그대로(+0.013 bpm)였습니다.</p></li>
-              <li><span>검증</span><p>평균 오차와 거꾸로 된 예측 비율을 함께 비교했습니다. 거꾸로 된 예측은 "속도를 초속 0.5m 올렸는데 1분 뒤 심박이 내려간다고 예측한 경우"로 정해, 시험 데이터 전체에서 셌습니다. 2분 뒤 예측은 지금 심박을 그대로 쓰는 단순한 방법보다 오차가 1.64 bpm 작았습니다.</p></li>
-              <li><span>결과</span><p>평균 오차는 3.143에서 3.159 bpm으로 거의 그대로(+0.016)였고, 거꾸로 된 예측은 12.0%에서 0.6%로 줄었습니다.</p></li>
+              <li><span>현상</span><p>비교한 모델 중 평균 오차(MAE)가 3.143 bpm으로 가장 낮은 모델도, 속도를 초속 0.5m 올렸을 때 100번 중 12번꼴(12.0%)로 거꾸로 된 예측을 했습니다. 더 빨리 달리는데 심박이 내려간다고 예측한 경우입니다.</p></li>
+              <li><span>원인</span><p>MAE는 오차의 크기만 평균 내기 때문에, 속도를 바꿨을 때 예측이 맞는 방향으로 움직이는지는 알 수 없습니다. 이 예측은 페이스 추천에 쓰이므로 방향이 틀리면 맞지 않는 페이스를 추천하게 됩니다.</p></li>
+              <li><span>해결</span><p>Transformer 1개와 GRU 3개를 합친 모델을 속도가 오르면 심박 예측도 오르도록 추가 학습했습니다. Transformer 하나로 따로 시험했을 때도 거꾸로 된 예측이 11.5% → 1.7%로 줄었고, MAE는 0.013 bpm 늘어난 정도였습니다.</p></li>
+              <li><span>검증</span><p>거꾸로 된 예측은 "속도를 초속 0.5m 올렸는데 1분 뒤 심박이 내려간다고 예측한 경우"로 정하고, 시험 데이터 전체에서 MAE와 함께 비교했습니다. 2분 뒤 예측은 현재 심박을 그대로 쓰는 단순 기준보다 오차가 1.64 bpm 작았습니다.</p></li>
+              <li><span>결과</span><p>MAE는 3.143에서 3.159 bpm으로 거의 같았고(+0.016), 거꾸로 된 예측은 12.0%에서 0.6%로 줄었습니다.</p></li>
             </ol>
           </section>
         </article>
 
-        <div class="case-group"><p class="case-group-label">PART 2 · 시스템과 서비스</p><p>장비를 직접 붙이고, 웹 서비스를 끝까지 만든 프로젝트</p></div>
+        <div class="case-group"><p class="case-group-label">PART 2 · 시스템과 서비스</p><p>IoT 로봇, 웹 서비스</p></div>
 
         <article class="case" id="case-r0ki" aria-labelledby="r0ki-title">
           <div class="case-head">
             <div><p class="case-kind">03 / IOT · SYSTEM INTEGRATION</p><h3 id="r0ki-title">R0-KI<small>APARTMENT PATROL ROBOT</small></h3></div>
-            <div class="case-meta"><p>2026.07.06 — 08.14 · 팀장</p><span class="badge">팀 프로젝트 우수상</span></div>
+            <div class="case-meta"><p>2026.07.06 — 08.14 · 7인 팀 · 팀장</p><span class="badge">팀 프로젝트 우수상</span></div>
           </div>
           <div class="case-cols">
             <div>
@@ -212,10 +212,10 @@
                 <div><dt>저장소</dt><dd><a href="https://github.com/seongyun-dev/R0-KI" target="_blank" rel="noopener noreferrer">github.com/seongyun-dev/R0-KI ↗</a></dd></div>
               </dl>
               <ul class="steps">
-                <li><strong>센서, 로봇, 서버 통신 연동</strong><p>ESP32, Jetson Orin Nano, ROS2, MQTT를 써서 센서와 로봇, 서버 사이 통신을 연결했습니다.</p></li>
-                <li><strong>흩어진 로그를 한 형식으로</strong><p>MQTT 메시지, ROS2 Topic, 센서 값, 로봇 상태처럼 장치마다 다른 형태로 나오는 로그를 파싱하고 정규화해, 모니터링 화면이 한곳에서 보여 줄 수 있게 맞췄습니다.</p></li>
-                <li><strong>로봇 상태 화면에 들어갈 데이터</strong><p>배터리와 위치, 카메라·라이다·휠 모터·구동부 상태처럼 장치에서 올라오는 값을 정리해 로봇 목록과 상세 화면에 들어가게 했습니다. 화면 자체는 팀원이 만들었습니다.</p></li>
-                <li><strong>Jira로 일정 관리</strong><p>팀장으로 파트별 진행 상황을 확인하고, 통합 일정에 맞춰 팀원 간 개발 일정을 조율했습니다.</p></li>
+                <li><strong>명령 전달 경로 연결</strong><p>서버에서 보낸 명령이 MQTT와 ROS2를 거쳐 로봇까지 전달되고, 로봇 상태가 다시 서버로 올라오도록 연결했습니다.</p></li>
+                <li><strong>로그 파싱·정규화</strong><p>MQTT 메시지, ROS2 Topic, 센서 값, 로봇 상태처럼 장치마다 형태가 다른 로그를 파싱하고 정규화해, 모니터링 화면에서 한곳에 보여 줄 수 있게 맞췄습니다.</p></li>
+                <li><strong>로봇 상태 데이터</strong><p>배터리와 위치, 카메라·라이다·휠 모터·구동부 상태처럼 장치에서 올라오는 값을 정리해 로봇 목록과 상세 화면에 들어가게 했습니다. 화면 자체는 팀원이 만들었습니다.</p></li>
+                <li><strong>일정 관리</strong><p>팀장으로 Jira에서 파트별 진행 상황을 확인하고, 통합 일정에 맞춰 개발 일정을 조율했습니다.</p></li>
               </ul>
             </div>
             <div class="results">
@@ -237,12 +237,12 @@
           </div>
           <section class="story" aria-label="R0-KI 핵심 기여">
             <p class="story-label">핵심 기여</p>
-            <h4>명령이 어디서 멈췄는지, 로그로 따라갔습니다</h4>
+            <h4>명령이 멈춘 단계 추적</h4>
             <ol>
-              <li><span>현상</span><p>여러 시스템을 연결하자 로봇이 예상대로 움직이지 않을 때가 있었습니다.</p></li>
-              <li><span>원인</span><p>명령이 Backend, MQTT, ROS2를 차례로 거치는데 시스템마다 로그 형태가 달라서, 어느 단계에서 멈췄는지 바로 알 수 없었습니다.</p></li>
-              <li><span>해결</span><p>MQTT 메시지, ROS2 Topic, 센서 값, 로봇 상태 로그를 파싱하고 정규화해서 한 화면에서 볼 수 있게 했습니다.</p></li>
-              <li><span>결과</span><p>이 모니터링 화면에서 사용자 명령이 서버에서 MQTT와 ROS2를 거쳐 로봇 동작으로 이어지는 흐름(User Command → Backend → MQTT → ROS2 → Robot State → Robot Action)을 단계별로 따라가며, 로봇이 어느 단계에서 멈췄는지 찾아 고쳤습니다.</p></li>
+              <li><span>현상</span><p>여러 시스템을 연결한 뒤 로봇이 명령대로 움직이지 않는 경우가 있었습니다.</p></li>
+              <li><span>원인</span><p>명령이 Backend, MQTT, ROS2를 차례로 거치는데 시스템마다 로그 형태가 달라, 어느 단계에서 멈췄는지 바로 알 수 없었습니다.</p></li>
+              <li><span>해결</span><p>MQTT 메시지, ROS2 Topic, 센서 값, 로봇 상태 로그를 파싱·정규화해 한 화면에서 볼 수 있게 했습니다.</p></li>
+              <li><span>결과</span><p>이 모니터링 화면에서 명령 흐름(User Command → Backend → MQTT → ROS2 → Robot State → Robot Action)을 단계별로 따라가며 멈춘 단계를 찾아 고쳤습니다.</p></li>
             </ol>
           </section>
         </article>
@@ -254,15 +254,14 @@
           </div>
           <div class="case-cols">
             <div>
-              <p class="case-intro">사용자의 취향과 조건을 바탕으로 보드게임을 추천하고 관련 정보를 보여주는 웹 서비스입니다. 2인 팀의 팀장으로 서비스 기획과 일정 조율을 맡았고, Django와 Vue로 커뮤니티, 마이페이지, 보드게임 랭킹, 지도 연동의 화면과 API를 만들었습니다.</p>
+              <p class="case-intro">인원·시간·난이도 같은 조건으로 보드게임을 추천하고, 게임 정보와 커뮤니티를 제공하는 웹 서비스입니다. 2인 팀의 팀장으로 서비스 기획과 일정 조율을 맡았고, Django와 Vue로 커뮤니티, 마이페이지, 보드게임 랭킹, 지도 연동의 화면과 API를 만들었습니다.</p>
               <dl class="case-facts">
                 <div><dt>담당</dt><dd>기획, 일정 조율, 커뮤니티·마이페이지·랭킹·지도 연동</dd></div>
                 <div><dt>사용 기술</dt><dd>Django, Django REST Framework, Vue 3, SQLite, JWT</dd></div>
               </dl>
               <ul class="steps">
-                <li><strong>기능 단위로 화면과 API까지</strong><p>팀원과 기능 단위로 역할을 나눠, 각자 맡은 기능은 Frontend와 Backend를 함께 개발했습니다.</p></li>
-                <li><strong>커뮤니티, 마이페이지, 랭킹, 지도 연동</strong><p>제가 맡은 기능은 Vue 화면부터 Django API까지 직접 연결했습니다.</p></li>
-                <li><strong>중간에 범위를 다시 정리</strong><p>둘이니까 하면서 맞추면 된다고 생각하고 기능 요구사항을 충분히 정하지 않은 채 시작했더니, 서로 생각하는 필수 기능이 달라 만든 부분을 여러 번 고쳐야 했습니다. 사용자 흐름을 다시 그려 필수·추가 기능을 나누고, 필수 기능부터 끝낸다는 기준을 정한 뒤 서비스를 완성했습니다.</p></li>
+                <li><strong>역할 분담</strong><p>팀원과 기능 단위로 역할을 나눠, 각자 맡은 기능은 Vue 화면부터 Django API까지 함께 개발했습니다.</p></li>
+                <li><strong>범위 재정리</strong><p>2인 팀이라 기능 요구사항을 충분히 정하지 않고 시작했는데, 서로 생각한 필수 기능이 달라 만든 부분을 여러 번 고쳐야 했습니다. 사용자 흐름을 다시 그려 필수·추가 기능을 나누고, 필수 기능부터 끝내기로 정한 뒤 서비스를 완성했습니다.</p></li>
               </ul>
             </div>
             <div class="results">
