@@ -49,7 +49,7 @@ code { font: .9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .hero h1 span { color: var(--mint-dark); }
 .hero-name { margin-top: 30px; font-size: 18px; }
 .hero-name strong { font-weight: 700; }
-.hero-intro { max-width: 640px; margin-top: 10px; color: var(--ink-soft); font-size: 18px; line-height: 1.85; }
+.hero-intro { max-width: 640px; margin-top: 30px; color: var(--ink-soft); font-size: 18px; line-height: 1.85; }
 .hero-links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 34px; }
 .button { display: inline-flex; align-items: center; gap: 22px; height: 58px; padding: 0 30px; border: 1px solid var(--line); border-radius: var(--r); background: var(--white); color: var(--ink); font-size: 16px; font-weight: 700; }
 .button-mint { border-color: var(--mint); background: var(--mint); box-shadow: 0 8px 24px rgb(12 239 211 / 32%); }
